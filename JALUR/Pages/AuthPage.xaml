@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Bertuzzi.MAUI.MaskedEntry;assembly=Bertuzzi.MAUI.MaskedEntry"
+             x:Class="JALUR.Pages.AuthPage"
+             Title="AuthPage"
+             BackgroundColor="#977585">
+
+    <Grid>
+        <ScrollView Padding="20">
+            <FlexLayout Direction="Column">
+                <Button
+                    ImageSource="left_arrow.svg"
+                    Text="Назад"
+                    Margin="0, 0, 0, 40"
+                    BackgroundColor="#75646C"
+                    TextColor="#F6F6F6"
+                    WidthRequest="120"
+                    Clicked="ClosePage_Click">
+                </Button>
+                <!-- Элемент формы -->
+                <Frame
+                    Margin="0, 40, 0, 0"
+                    CornerRadius="10"
+                    Padding="20"
+                    VerticalOptions="Center"
+                    BackgroundColor="#E4DBE0">
+                    <StackLayout>
+                        <Label
+                            HorizontalOptions="Center"
+                            Margin="0, 25, 0, 25"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="#75646C"
+                            Text="Вход" />
+                        <StackLayout>
+                            <Label 
+                                HorizontalOptions="Start"
+                                Text="Введите номер телефона"
+                                TextColor="#75646C"/>
+                            <control:MaskedEntry
+                                x:Name="Phone"
+                                Mask="+7 (XXX) XXX-XX-XX"
+                                Background="#F6F6F6"
+                                TextColor="#75646C"
+                                Margin="0, 6, 0, 10"
+                                Keyboard="Numeric">
+                            </control:MaskedEntry>
+                            <StackLayout x:Name="SetUserCode" IsVisible="true">
+                                <Button
+                                    Text="Войти"
+                                    WidthRequest="120"
+                                    HorizontalOptions="End"
+                                    BackgroundColor="#75646C"
+                                    TextColor="#F6F6F6"
+                                    Clicked="SetCodeUser_Click"/>
+                            </StackLayout>
+                            <StackLayout x:Name="SetUserAuth" IsVisible="false">
+                                <Label 
+                                    HorizontalOptions="Start"
+                                    Text="Введите код"
+                                    TextColor="#75646C"/>
+                                <Entry 
+                                    x:Name="Password"
+                                    Background="#F6F6F6"
+                                    TextColor="#75646C"
+                                    Margin="0, 6, 0, 10"
+                                    Keyboard="Text"/>
+                                <Button
+                                    Text="Войти"
+                                    WidthRequest="120"
+                                    HorizontalOptions="End"
+                                    BackgroundColor="#75646C"
+                                    TextColor="#F6F6F6"
+                                    Clicked="AuthUser_Click"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </FlexLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

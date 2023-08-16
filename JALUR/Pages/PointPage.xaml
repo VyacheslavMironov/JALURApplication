@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JALUR.Pages.PointPage"
+             Title="PointPage"
+             BackgroundColor="#977585"
+             Padding="20">
+
+    <Grid Margin="0, 290, 0, 0">
+        <ScrollView>
+            <FlexLayout Direction="Column">
+                <Button
+                    Text="СОЗДАТЬ АККАУНТ"
+                    BackgroundColor="#75646C"
+                    TextColor="#F6F6F6"
+                    Margin="0, 10, 0, 0"
+                    Clicked="OpenUserCreatePage_Click"/>
+                <Button
+                    Text="ВОЙТИ"
+                    BackgroundColor="#75646C"
+                    TextColor="#F6F6F6"
+                    Margin="0, 10, 0, 0"
+                    Clicked="OpenAuthPage_Click"/>
+            </FlexLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
