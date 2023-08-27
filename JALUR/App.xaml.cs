@@ -1,13 +1,25 @@
 ﻿using JALUR.Pages;
+using System.Runtime.Caching;
 
 namespace JALUR;
 
 public partial class App : Application
 {
-	public App()
+    MemoryCache cache;
+
+    public App()
 	{
 		InitializeComponent();
 
-		MainPage = new PointPage();
+        cache = MemoryCache.Default;
+
+        if (cache.Get("BearerToken") == null)
+        {
+            MainPage = new PointPage();
+        }
+        else
+        {
+            MainPage = new MainPage();
+        }
 	}
 }

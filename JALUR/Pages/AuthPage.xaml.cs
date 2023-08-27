@@ -1,15 +1,20 @@
 using System.Text;
-using Android.Hardware.Lights;
+using System.Runtime.Caching;
 using Newtonsoft.Json;
 
 namespace JALUR.Pages;
 
 public partial class AuthPage : ContentPage
 {
-	public AuthPage()
+    MemoryCache cache;
+    ConfigEditor config;
+
+    public AuthPage()
 	{
 		InitializeComponent();
-	}
+        cache = MemoryCache.Default;
+        config = new ConfigEditor();
+    }
 
 	public async void ClosePage_Click(object sender, EventArgs e)
 	{
@@ -21,7 +26,7 @@ public partial class AuthPage : ContentPage
         if (Phone.Text.Length > 0)
         {
             HttpClient client = new HttpClient();
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://89.108.77.131:5000/api/user/code");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"{config.ServerHost}/api/user/code");
             string json = JsonConvert.SerializeObject(new
             {
                 Phone = Phone.Text
@@ -45,7 +50,7 @@ public partial class AuthPage : ContentPage
         if (Phone.Text.Length > 0 && Password.Text.Length > 0)
         {
             HttpClient client = new HttpClient();
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://89.108.77.131:5000/api/user/auth");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"{config.ServerHost}/api/user/auth");
             string json = JsonConvert.SerializeObject(new
             {
                 Phone = Phone.Text,
@@ -55,7 +60,8 @@ public partial class AuthPage : ContentPage
             HttpResponseMessage response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {
-                // Сохранить в файл Bearer <key>
+                // Сохранить Bearer <key>
+                cache.Add("BearerToken", response, DateTimeOffset.Now.AddDays(365));
                 await Navigation.PushModalAsync(new MainPage());
             }
             else

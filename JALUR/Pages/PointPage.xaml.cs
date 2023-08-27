@@ -4,10 +4,10 @@ using JALUR.Pages;
 
 public partial class PointPage : ContentPage
 {
-	public PointPage()
+    public PointPage()
 	{
 		InitializeComponent();
-	}
+    }
 
 	public async void OpenUserCreatePage_Click(object sender, EventArgs e)
 	{

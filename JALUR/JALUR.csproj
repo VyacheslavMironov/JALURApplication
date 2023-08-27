@@ -50,9 +50,11 @@
 
 	<ItemGroup>
 		<PackageReference Include="Bertuzzi.MAUI.MaskedEntry" Version="1.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.10" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Syncfusion.Maui.Inputs" Version="22.2.9" />
+		<PackageReference Include="System.Runtime.Caching" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,6 +70,10 @@
 	  <MauiXaml Update="Pages\UserCreatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Entity\Response\" />
 	</ItemGroup>
 
 </Project>

@@ -2,11 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JALUR.Pages.MainPage"
-             Title="MainPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="MainPage"
+             BackgroundColor="#F6F6F6">
+    
+    <Grid Margin="0, 20, 0, 0">
+        <ScrollView Padding="20">
+            <FlexLayout Direction="Column">
+                <StackLayout x:Name="dataList"/>
+            </FlexLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

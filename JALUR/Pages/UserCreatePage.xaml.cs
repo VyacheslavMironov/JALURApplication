@@ -5,10 +5,12 @@ namespace JALUR.Pages;
 
 public partial class UserCreatePage : ContentPage
 {
-	public UserCreatePage()
+    ConfigEditor config;
+    public UserCreatePage()
 	{
 		InitializeComponent();
-	}
+        config = new ConfigEditor();
+    }
 
     public async void ClosePage_Click(object sender, EventArgs e)
     {
@@ -21,7 +23,7 @@ public partial class UserCreatePage : ContentPage
             Height.Text.Length > 0 && Age.Text.Length > 0 && Phone.Text.Length > 0)
         {
             HttpClient client = new HttpClient();
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://89.108.77.131:5000/api/user/create");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"{config.ServerHost}/api/user/create");
             string json = JsonConvert.SerializeObject(new
             {
                 FirstName = FirstName.Text,
