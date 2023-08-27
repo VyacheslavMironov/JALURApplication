@@ -1,6 +1,8 @@
 using System.Text;
 using System.Runtime.Caching;
 using Newtonsoft.Json;
+using Bertuzzi.MAUI.MaskedEntry;
+using Syncfusion.Maui.Inputs;
 
 namespace JALUR.Pages;
 
@@ -14,6 +16,17 @@ public partial class AuthPage : ContentPage
 		InitializeComponent();
         cache = MemoryCache.Default;
         config = new ConfigEditor();
+        Phone.TextChanged += (s, e) =>
+        {
+            if (e.NewTextValue.Length >= Phone.Mask.Length)
+            {
+                Phone.CursorPosition = Phone.Mask.Length;
+            }
+            else
+            {
+                Phone.CursorPosition = e.NewTextValue.Length;
+            }
+        };
     }
 
 	public async void ClosePage_Click(object sender, EventArgs e)

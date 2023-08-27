@@ -4,7 +4,7 @@
              xmlns:control="clr-namespace:Bertuzzi.MAUI.MaskedEntry;assembly=Bertuzzi.MAUI.MaskedEntry"
              x:Class="JALUR.Pages.AuthPage"
              Title="AuthPage"
-             BackgroundColor="#977585">
+             BackgroundColor="#f6f6f6">
 
     <Grid>
         <ScrollView Padding="20">
@@ -41,8 +41,10 @@
                             <control:MaskedEntry
                                 x:Name="Phone"
                                 Mask="+7 (XXX) XXX-XX-XX"
-                                Background="#F6F6F6"
                                 TextColor="#75646C"
+                                BackgroundColor="#f6f6f6"
+                                FontSize="15"
+                                FontAttributes="Bold"
                                 Margin="0, 6, 0, 10"
                                 Keyboard="Numeric">
                             </control:MaskedEntry>
@@ -65,6 +67,8 @@
                                     Background="#F6F6F6"
                                     TextColor="#75646C"
                                     Margin="0, 6, 0, 10"
+                                    FontSize="15"
+                                    FontAttributes="Bold"
                                     Keyboard="Text"/>
                                 <Button
                                     Text="Войти"

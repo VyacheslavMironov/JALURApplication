@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JALUR.Pages.PointPage"
              Title="PointPage"
-             BackgroundColor="#977585"
+             BackgroundColor="#E4DBE0"
              Padding="20">
 
     <Grid Margin="0, 290, 0, 0">
@@ -11,14 +11,14 @@
             <FlexLayout Direction="Column">
                 <Button
                     Text="СОЗДАТЬ АККАУНТ"
-                    BackgroundColor="#75646C"
-                    TextColor="#F6F6F6"
+                    BackgroundColor="#F6F6F6"
+                    TextColor="#75646C"
                     Margin="0, 10, 0, 0"
                     Clicked="OpenUserCreatePage_Click"/>
                 <Button
                     Text="ВОЙТИ"
-                    BackgroundColor="#75646C"
-                    TextColor="#F6F6F6"
+                    BackgroundColor="#F6F6F6"
+                    TextColor="#75646C"
                     Margin="0, 10, 0, 0"
                     Clicked="OpenAuthPage_Click"/>
             </FlexLayout>

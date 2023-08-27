@@ -4,7 +4,7 @@
              xmlns:control="clr-namespace:Bertuzzi.MAUI.MaskedEntry;assembly=Bertuzzi.MAUI.MaskedEntry"
              x:Class="JALUR.Pages.UserCreatePage"
              Title="UserCreatePage"
-             BackgroundColor="#977585">
+             BackgroundColor="#f6f6f6">
 
     <Grid>
         <ScrollView Padding="20">
@@ -43,6 +43,8 @@
                                 Background="#F6F6F6"
                                 TextColor="#75646C"
                                 Margin="0, 6, 0, 10"
+                                FontSize="15"
+                                FontAttributes="Bold"
                                 Keyboard="Text"/>
                         </StackLayout>
                         <StackLayout>
@@ -55,6 +57,8 @@
                                 Background="#F6F6F6"
                                 TextColor="#75646C"
                                 Margin="0, 6, 0, 10"
+                                FontSize="15"
+                                FontAttributes="Bold"
                                 Keyboard="Text"/>
                         </StackLayout>
                         <StackLayout>
@@ -67,6 +71,8 @@
                                 Background="#F6F6F6"
                                 TextColor="#75646C"
                                 Margin="0, 6, 0, 10"
+                                FontSize="15"
+                                FontAttributes="Bold"
                                 Keyboard="Numeric"/>
                         </StackLayout>
                         <StackLayout>
@@ -79,6 +85,8 @@
                                 Background="#F6F6F6"
                                 TextColor="#75646C"
                                 Margin="0, 6, 0, 10"
+                                FontSize="15"
+                                FontAttributes="Bold"
                                 Keyboard="Numeric"/>
                         </StackLayout>
                         <StackLayout>
@@ -89,7 +97,10 @@
                             <Entry 
                                 x:Name="Age"
                                 Background="#F6F6F6"
-                                Margin="0, 6, 0, 10"/>
+                                TextColor="#75646C"
+                                Margin="0, 6, 0, 10"
+                                FontSize="15"
+                                FontAttributes="Bold"/>
                         </StackLayout>
                         <StackLayout>
                             <Label 
@@ -99,6 +110,8 @@
                             <Picker
                                 x:Name="Gender"
                                 Title="Укажите ваш пол"
+                                FontSize="15"
+                                FontAttributes="Bold"
                                 TextColor="#75646C">
                                 <Picker.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">
@@ -119,12 +132,14 @@
                                 Background="#F6F6F6"
                                 TextColor="#75646C"
                                 Margin="0, 6, 0, 10"
+                                FontSize="15"
+                                FontAttributes="Bold"
                                 Keyboard="Numeric">
                             </control:MaskedEntry>
                         </StackLayout>
                         <Button
                             Text="Зарегистрироваться"
-                            WidthRequest="120"
+                            WidthRequest="180"
                             HorizontalOptions="End"
                             BackgroundColor="#75646C"
                             TextColor="#F6F6F6"

@@ -10,6 +10,17 @@ public partial class UserCreatePage : ContentPage
 	{
 		InitializeComponent();
         config = new ConfigEditor();
+        Phone.TextChanged += (s, e) =>
+        {
+            if (e.NewTextValue.Length >= Phone.Mask.Length)
+            {
+                Phone.CursorPosition = Phone.Mask.Length;
+            }
+            else
+            {
+                Phone.CursorPosition = e.NewTextValue.Length;
+            }
+        };
     }
 
     public async void ClosePage_Click(object sender, EventArgs e)

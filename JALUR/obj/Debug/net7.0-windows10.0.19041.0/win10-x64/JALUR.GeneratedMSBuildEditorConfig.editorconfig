@@ -34,6 +34,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = JALUR.Pages.PointPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\PointPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\PointPage.xaml
 
+[C:/Users/VuacheslavMironov/Desktop/JALUR/JALUR/Pages/ShowWorkoutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = JALUR.Pages.ShowWorkoutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ShowWorkoutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ShowWorkoutPage.xaml
+
 [C:/Users/VuacheslavMironov/Desktop/JALUR/JALUR/Pages/UserCreatePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = JALUR.Pages.UserCreatePage.xaml

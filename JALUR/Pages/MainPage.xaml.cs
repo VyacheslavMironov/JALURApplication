@@ -1,5 +1,4 @@
 using JALUR.Entity.Pages;
-using Microsoft.Maui.Graphics.Text;
 using Microsoft.Maui.Layouts;
 using System.Collections.ObjectModel;
 using System.Net.Http.Json;
@@ -9,8 +8,8 @@ namespace JALUR.Pages;
 public partial class MainPage : ContentPage
 {
     public ConfigEditor config = new ConfigEditor();
-    public TypeWorkout typeWorkout = new TypeWorkout();
     ObservableCollection<WorkoutEntity> Workouts;
+
     public MainPage()
 	{
         Workouts = new ObservableCollection<WorkoutEntity>();
@@ -27,8 +26,12 @@ public partial class MainPage : ContentPage
         HttpClient client = new HttpClient();
         var response = await client.GetFromJsonAsync<List<WorkoutEntity>>($"{config.ServerHost}/api/workouts/all");
         Workouts.Clear();
+
+
         foreach (var item in response)
         {
+            var responseType = await client.GetFromJsonAsync<TypeWorkoutEntity>($"{config.ServerHost}/api/type/workouts/show/{item.TypeWorkoutId}");
+
             Workouts.Add(
                 new WorkoutEntity(
                     item.Id,
@@ -38,13 +41,23 @@ public partial class MainPage : ContentPage
                     item.Image
                 )
             );
-
+            
             Frame frame = new Frame
             {
                 BackgroundColor = Color.FromHex("#E4DBE0"),
                 Margin = new Thickness(0, 0, 0, 15),
                 CornerRadius = 10,
                 Padding = new Thickness(0, 0, 0, 2)
+            };
+            Button buttonLinkShow = new Button
+            {
+                HorizontalOptions = LayoutOptions.End,
+                VerticalOptions = LayoutOptions.Start,
+                Margin = new Thickness(0, 10, 0, 0),
+                BackgroundColor = Color.FromHex("#75646C"),
+                TextColor = Color.FromHex("#f6f6f6"),
+                WidthRequest = 150,
+                Text = "Подробнее"
             };
 
             frame.Content =
@@ -55,6 +68,8 @@ public partial class MainPage : ContentPage
                         new Image
                         {
                             Source=config.ServerHost + "/storage/" + item.Image,
+                            HorizontalOptions = LayoutOptions.Center,
+                            VerticalOptions = LayoutOptions.Center,
                             Margin = new Thickness(0, 0, 0, 0)
                         },
                         new StackLayout
@@ -85,23 +100,14 @@ public partial class MainPage : ContentPage
                                             {
                                                 new Label
                                                 {
-                                                    Text = "Тип тренировки",
+                                                    Text = responseType.Name,
                                                     HorizontalOptions = LayoutOptions.Start,
                                                     VerticalOptions = LayoutOptions.Start,
                                                     Margin = new Thickness(0, 10, 0, 0),
                                                     FontSize = 14,
                                                     TextColor = Color.FromHex("#75646C")
                                                 },
-                                                new Button
-                                                {
-                                                    HorizontalOptions = LayoutOptions.End,
-                                                    VerticalOptions = LayoutOptions.Start,
-                                                    Margin = new Thickness(0, 10, 0, 0),
-                                                    BackgroundColor = Color.FromHex("#75646C"),
-                                                    TextColor = Color.FromHex("#f6f6f6"),
-                                                    WidthRequest = 150,
-                                                    Text="Подробнее"
-                                                }
+                                                buttonLinkShow
                                             }
                                         }
                                     }
@@ -110,8 +116,15 @@ public partial class MainPage : ContentPage
                         }
                     }
                 };
-            
+
+            buttonLinkShow.Clicked += (sender, e) => {
+                Navigation.PushModalAsync(new ShowWorkoutPage(item.Id));
+            };
             dataList.Add( frame );
         }
+    }
+    public async void menu_Click__Main(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new MainPage());
     }
 }
