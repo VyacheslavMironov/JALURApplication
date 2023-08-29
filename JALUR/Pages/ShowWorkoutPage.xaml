@@ -4,6 +4,7 @@
              x:Class="JALUR.Pages.ShowWorkoutPage"
              Title="ShowWorkoutPage"
              BackgroundColor="#f6f6f6">
+    
     <Grid Margin="0, 0, 0, 0">
         <ScrollView 
             VerticalOptions="Start"
@@ -34,37 +35,39 @@
             </FlexLayout>
         </ScrollView>
         <FlexLayout
-                HeightRequest="60"
-                Margin="0, 670, 0, 0"
-                BackgroundColor="#75646C"
-                Padding="20"
-                Wrap="Wrap"
-                JustifyContent="SpaceAround">
-        <Button
+            HeightRequest="60"
+            Margin="0, 670, 0, 0"
+            BackgroundColor="#75646C"
+            Padding="20"
+            Wrap="Wrap"
+            JustifyContent="SpaceAround">
+            <Button
                 ImageSource="bx_table.svg"
+                BackgroundColor="#f6f6f6"
+                CornerRadius="100"
+                WidthRequest="45"
+                VerticalOptions="Center"/>
+            <Button
+                ImageSource="bx_user.svg"
+                BackgroundColor="#f6f6f6"
+                CornerRadius="100"
+                WidthRequest="45"
+                VerticalOptions="Center"
+                Clicked="menu_Click__CoucherList"/>
+            <Button
+                ImageSource="bx_list_ul.svg"
                 BackgroundColor="#E4DBE0"
                 CornerRadius="100"
                 WidthRequest="45"
                 VerticalOptions="Center"
                 Clicked="menu_Click__Main"/>
-        <Button
-                ImageSource="bx_user.svg"
-                BackgroundColor="#f6f6f6"
-                CornerRadius="100"
-                WidthRequest="45"
-                VerticalOptions="Center"/>
-        <Button
-                ImageSource="bx_list_ul.svg"
-                BackgroundColor="#f6f6f6"
-                CornerRadius="100"
-                WidthRequest="45"
-                VerticalOptions="Center"/>
-        <Button
+            <Button
                 ImageSource="bxs_customize.svg"
                 BackgroundColor="#f6f6f6"
                 CornerRadius="100"
                 WidthRequest="45"
-                VerticalOptions="Center"/>
-    </FlexLayout>
+                VerticalOptions="Center"
+                Clicked="menu_Click__ExtraMenu"/>
+        </FlexLayout>
     </Grid>
 </ContentPage>

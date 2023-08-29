@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Bertuzzi.MAUI.MaskedEntry;assembly=Bertuzzi.MAUI.MaskedEntry"
+             x:Class="JALUR.Pages.ProfilePage"
+             Title="ProfilePage"
+             BackgroundColor="#f6f6f6">
+    <Grid>
+        <ScrollView Padding="20">
+            <FlexLayout Direction="Column">
+                <Button
+                    ImageSource="left_arrow.svg"
+                    Text="Назад"
+                    Margin="0, 0, 0, 40"
+                    BackgroundColor="#75646C"
+                    TextColor="#F6F6F6"
+                    WidthRequest="120"
+                    Clicked="ClosePage_Click">
+                </Button>
+                <!-- Элемент формы -->
+                <Frame
+                    Margin="0, 40, 0, 0"
+                    CornerRadius="10"
+                    Padding="20"
+                    VerticalOptions="Center"
+                    BackgroundColor="#E4DBE0">
+                    <StackLayout>
+                        <Label
+                            HorizontalOptions="Center"
+                            Margin="0, 25, 0, 25"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="#75646C"
+                            Text="Сменить номер" />
+                        <StackLayout>
+                            <Label 
+                                HorizontalOptions="Start"
+                                Text="Введите номер телефона"
+                                TextColor="#75646C"/>
+                            <control:MaskedEntry
+                                x:Name="Phone"
+                                Mask="+7 (XXX) XXX-XX-XX"
+                                TextColor="#75646C"
+                                BackgroundColor="#f6f6f6"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                Margin="0, 6, 0, 10"
+                                Keyboard="Numeric">
+                            </control:MaskedEntry>
+                            <Button
+                                Text="Сохранить"
+                                WidthRequest="120"
+                                HorizontalOptions="End"
+                                BackgroundColor="#75646C"
+                                TextColor="#F6F6F6"
+                                Clicked="Close_Send_DataFormPhone"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </FlexLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -25,29 +25,31 @@
                 JustifyContent="SpaceAround">
             <Button
                 ImageSource="bx_table.svg"
+                BackgroundColor="#f6f6f6"
+                CornerRadius="100"
+                WidthRequest="45"
+                VerticalOptions="Center"/>
+            <Button
+                ImageSource="bx_user.svg"
+                BackgroundColor="#f6f6f6"
+                CornerRadius="100"
+                WidthRequest="45"
+                VerticalOptions="Center"
+                Clicked="menu_Click__CoucherList"/>
+            <Button
+                ImageSource="bx_list_ul.svg"
                 BackgroundColor="#E4DBE0"
                 CornerRadius="100"
                 WidthRequest="45"
                 VerticalOptions="Center"
                 Clicked="menu_Click__Main"/>
             <Button
-                ImageSource="bx_user.svg"
-                BackgroundColor="#f6f6f6"
-                CornerRadius="100"
-                WidthRequest="45"
-                VerticalOptions="Center"/>
-            <Button
-                ImageSource="bx_list_ul.svg"
-                BackgroundColor="#f6f6f6"
-                CornerRadius="100"
-                WidthRequest="45"
-                VerticalOptions="Center"/>
-            <Button
                 ImageSource="bxs_customize.svg"
                 BackgroundColor="#f6f6f6"
                 CornerRadius="100"
                 WidthRequest="45"
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                Clicked="menu_Click__ExtraMenu"/>
         </FlexLayout>
     </Grid>
 </ContentPage>

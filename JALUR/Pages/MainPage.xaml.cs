@@ -67,7 +67,7 @@ public partial class MainPage : ContentPage
                     {
                         new Image
                         {
-                            Source=config.ServerHost + "/storage/" + item.Image,
+                            Source = config.ServerHost + "/storage/" + item.Image,
                             HorizontalOptions = LayoutOptions.Center,
                             VerticalOptions = LayoutOptions.Center,
                             Margin = new Thickness(0, 0, 0, 0)
@@ -126,5 +126,13 @@ public partial class MainPage : ContentPage
     public async void menu_Click__Main(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new MainPage());
+    }
+    public async void menu_Click__CoucherList(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new CoucherListPage());
+    }
+    private async void menu_Click__ExtraMenu(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new ExtraMenuPage());
     }
 }

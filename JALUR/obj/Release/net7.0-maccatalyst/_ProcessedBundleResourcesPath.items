@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bxs_customize.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bxs_customize@2x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bxs_customize@3x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_list_ul.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_list_ul@2x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_list_ul@3x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_table.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_table@2x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_table@3x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_user.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_user@2x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\bx_user@3x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\dotnet_bot.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\dotnet_bot@2x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\dotnet_bot@3x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\left_arrow.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\left_arrow@2x.png" />
+    <BundleResource Include="C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Release\net7.0-maccatalyst\resizetizer\r\left_arrow@3x.png" />
+    <BundleResource Include="obj\Release\net7.0-maccatalyst\resizetizer\f\OpenSans-Regular.ttf" />
+    <BundleResource Include="obj\Release\net7.0-maccatalyst\resizetizer\f\OpenSans-Semibold.ttf" />
+  </ItemGroup>
+</Project>

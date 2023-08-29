@@ -22,13 +22,6 @@ public partial class ShowWorkoutPage : ContentPage
         BindingContext = this;
     }
 
-
-
-    public async void ClosePage_Click(object sender, EventArgs e)
-    {
-        await Navigation.PopModalAsync();
-    }
-
     public async void BuildPage()
     {
         HttpClient client = new HttpClient();
@@ -87,8 +80,20 @@ public partial class ShowWorkoutPage : ContentPage
         xPage.Add(content);
     }
 
+    public async void ClosePage_Click(object sender, EventArgs e)
+    {
+        await Navigation.PopModalAsync();
+    }
     public async void menu_Click__Main(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new MainPage());
+    }
+    public async void menu_Click__CoucherList(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new CoucherListPage());
+    }
+    private async void menu_Click__ExtraMenu(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new ExtraMenuPage());
     }
 }

@@ -1,8 +1,7 @@
 using System.Text;
 using System.Runtime.Caching;
 using Newtonsoft.Json;
-using Bertuzzi.MAUI.MaskedEntry;
-using Syncfusion.Maui.Inputs;
+using JALUR.Entity.Pages;
 
 namespace JALUR.Pages;
 
@@ -10,6 +9,7 @@ public partial class AuthPage : ContentPage
 {
     MemoryCache cache;
     ConfigEditor config;
+    AuthEntity Auth;
 
     public AuthPage()
 	{
@@ -71,10 +71,18 @@ public partial class AuthPage : ContentPage
             });
             request.Content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.SendAsync(request);
+            string jsonContext = await response.Content.ReadAsStringAsync();
+            var userContext = JsonConvert.DeserializeObject<AuthEntity>(jsonContext);
             if (response.IsSuccessStatusCode)
             {
+                // Сохранить Информацию о клиенте
+                cache.Add("Id", userContext.Id, DateTimeOffset.Now.AddDays(365));
+                cache.Add("FirstName", userContext.FirstName, DateTimeOffset.Now.AddDays(365));
+                cache.Add("LastName", userContext.LastName, DateTimeOffset.Now.AddDays(365));
+                cache.Add("Phone", userContext.Phone, DateTimeOffset.Now.AddDays(365));
+                cache.Add("Role", userContext.Role, DateTimeOffset.Now.AddDays(365));
                 // Сохранить Bearer <key>
-                cache.Add("BearerToken", response, DateTimeOffset.Now.AddDays(365));
+                cache.Add("AccessKey", userContext.AccessKey, DateTimeOffset.Now.AddDays(365));
                 await Navigation.PushModalAsync(new MainPage());
             }
             else
