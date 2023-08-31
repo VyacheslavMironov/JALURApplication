@@ -11,6 +11,10 @@ public partial class ExtraMenuPage : ContentPage
         cache = MemoryCache.Default;
     }
 
+    public async void menu_Click__Schedule(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new SchedulePage());
+    }
     public async void menu_Click__Main(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new MainPage());

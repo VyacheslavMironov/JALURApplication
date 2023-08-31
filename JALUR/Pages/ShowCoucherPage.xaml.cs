@@ -81,6 +81,10 @@ public partial class ShowCoucherPage : ContentPage
         xPage.Add(content);
     }
 
+    public async void menu_Click__Schedule(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new SchedulePage());
+    }
     public async void ClosePage_Click(object sender, EventArgs e)
     {
         await Navigation.PopModalAsync();

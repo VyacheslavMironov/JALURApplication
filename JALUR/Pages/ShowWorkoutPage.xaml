@@ -46,7 +46,8 @@
                 BackgroundColor="#f6f6f6"
                 CornerRadius="100"
                 WidthRequest="45"
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                Clicked="menu_Click__Schedule"/>
             <Button
                 ImageSource="bx_user.svg"
                 BackgroundColor="#f6f6f6"

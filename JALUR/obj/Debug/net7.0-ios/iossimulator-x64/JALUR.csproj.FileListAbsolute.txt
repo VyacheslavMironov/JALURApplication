@@ -311,3 +311,4 @@ C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Debug\net7.0-ios\iossimulator
 C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Debug\net7.0-ios\iossimulator-x64\JALUR.pdb
 C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Debug\net7.0-ios\iossimulator-x64\JALUR.genruntimeconfig.cache
 C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Debug\net7.0-ios\iossimulator-x64\ref\JALUR.dll
+C:\Users\VuacheslavMironov\Desktop\JALUR\JALUR\obj\Debug\net7.0-ios\iossimulator-x64\build-signature\signature
